@@ -39,6 +39,9 @@ class TestimonialController extends Controller
             $path = Storage::disk('public')->put('images', $image);
             $testimonial->image = $path;
         }
+        else{
+            $testimonial->image = 'null';
+        }
 
         $testimonial->save();
 
