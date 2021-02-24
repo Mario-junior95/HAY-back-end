@@ -29,7 +29,7 @@ class AddTestimonialRequest extends FormRequest
             'title_en' => 'required|max:255',
             'description_ar' => 'required',
             'description_en' => 'required',
-            'image' => 'bail|nullable|mimes:jpeg,png,jpg,gif,svg|max:5000',
+            // 'image' => 'bail|nullable|mimes:jpeg,png,jpg,gif,svg|max:5000',
             'date' => 'required|date',            
         ];
     }
@@ -52,8 +52,8 @@ class AddTestimonialRequest extends FormRequest
             'description_ar.required' => 'Arabic Description is required !',
             'description_en.required' => 'English Description is required !',
 
-            'image.mimes' => 'Image must be .jpg , .jpeg, .gif, .svg or .png extension !',
-            'image.max' => 'Image to upload  must be maximum of 5MB !',
+            // 'image.mimes' => 'Image must be .jpg , .jpeg, .gif, .svg or .png extension !',
+            // 'image.max' => 'Image to upload  must be maximum of 5MB !',
             
             'date.required' => 'Date is required !',
         ];            

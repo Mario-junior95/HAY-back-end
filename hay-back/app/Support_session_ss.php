@@ -17,7 +17,7 @@ class Support_session_ss extends Model
     }
 
     public function psychologist(){
-        return $this->belongsTo(Psychologist::class , 'id');
+        return $this->belongsTo(Psychologist::class);
     }
 
     public function time_ss(){

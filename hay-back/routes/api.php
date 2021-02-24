@@ -23,22 +23,24 @@ Route::post('/login', 'UserController@login');
 
 Route::post('/admin-login', 'AdminAuthController@login');
 Route::get('/admin-login' , 'AdminAuthController@login' );
+Route::post('/admin-register', 'AdminAuthController@register');
 
+Route::resource('/admin' , 'AdminController');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
-    Route::post('/admin-register', 'AdminAuthController@register');
+
     Route::resource('/update-password' , 'PassController');
     Route::post('/admin-logout', 'AdminAuthController@logout');
-    Route::resource('/admin' , 'AdminController');
     Route::post('/logout', 'UserController@logout');
     Route::resource('/update-user' , 'UserUpdateInfo');
     Route::match(['post' , 'put'] , '/updatePassword/{id}' , 'AdminAuthController@updatePassword');
-    Route::resource('/support-group' , 'SupportGroupController');    
 });
 /** Support Group Start */
 Route::resource('/support-session' , 'Support_Session_ssController');
 Route::resource('/time_ss' , 'TimeSSController');
 Route::resource('/user-supportGroup' , 'UserSupportSession');
+Route::resource('/support-group' , 'SupportGroupController');    
+
 /** Support Group End */
 
 
@@ -52,8 +54,7 @@ Route::resource('/contact', "ContactsController");
 
 
 
-
-
+Route::get('/user' , 'UserController@callbackUser');
 Route::resource('home' , 'HomeController');
 Route::resource('time' , 'TimeController');
 Route::resource('usersession' , 'UserSessionController');

@@ -23,6 +23,16 @@ class UserController extends Controller
         return response()->json($user);
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function callbackUser()
+    {
+        $users = User::all();
+        return response($users);
+    }
 
     /**
      * Store a newly created resource in storage.
