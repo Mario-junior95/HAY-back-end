@@ -10,6 +10,7 @@ use App\Helpers\Helpers;
 
 use App\Http\Requests\TherapyRequest;
 
+
 class SupportGroupController extends Controller
 {
     /**
@@ -27,10 +28,10 @@ class SupportGroupController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\TherapyRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TherapyRequest $request)
     {
         $data = $request->all();
         $supportGroup = new Support_Group;

@@ -16,8 +16,12 @@ class TimeSSController extends Controller
     public function index()
     {
         $timeSS = Time_ss::All();
-        return $timeSS;
-        return response()->json($timeSS);
+        if($timeSS){
+            return response()->json([
+                'time' => $timeSS
+            ] , 200);
+        }
+        return response()->json(['message' => 'error time'] , 401);
     }
 
     /**
