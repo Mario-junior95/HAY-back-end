@@ -54,8 +54,7 @@ Route::resource('/contact', "ContactsController");
 
 
 
-
-
+Route::get('/user' , 'UserController@callbackUser');
 Route::resource('home' , 'HomeController');
 Route::resource('time' , 'TimeController');
 Route::resource('usersession' , 'UserSessionController');
