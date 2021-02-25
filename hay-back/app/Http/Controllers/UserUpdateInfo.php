@@ -31,7 +31,9 @@ class UserUpdateInfo extends Controller
        }
          $user->save();
          
-         return response()->json('Successfully updated');
+         return response()->json([
+             'message' => 'Successfully updated',
+             'user' => $user]);
      
     }
 

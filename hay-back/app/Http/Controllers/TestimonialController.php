@@ -16,7 +16,7 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        $testimonial =  Testimonial::all();
+        $testimonial =  Testimonial::orderBy('date', 'desc')->get();
         return response()->json($testimonial);        
     }
 

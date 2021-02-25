@@ -16,7 +16,9 @@ class WebinarController extends Controller
      */
     public function index()
     {
-        $webinar =  Webinar::with('user')->get();
+        $webinar =  Webinar::with(['user' => function ($q){
+            $q->orderBy('id', 'desc');
+        }])->orderBy('date', 'desc')->get();
         return response()->json($webinar);
         
     }
