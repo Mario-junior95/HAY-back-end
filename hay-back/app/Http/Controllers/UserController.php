@@ -30,7 +30,7 @@ class UserController extends Controller
      */
     public function callbackUser()
     {
-        $users = User::all();
+        $users = User::orderBy('id', 'desc')->get();
         return response($users);
     }
 
